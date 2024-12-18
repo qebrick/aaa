@@ -98,7 +98,7 @@ void Task2()
    */
    printf("Starting Task2 request processing...\n");
    exec sql begin work; //íà÷àëî òðàíçàêöè
-   exec UPDATE s set name = (CASE WHEN name = (SELECT min(name)
+   exec sql UPDATE s set name = (CASE WHEN name = (SELECT min(name)
                                        FROM s)
                           THEN (SELECT max(name)
                                 FROM s)
